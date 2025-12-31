@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECON-Prep: Whitespace Normalizer</title>
+
+    <script>
+        (function() {
+            let themeToApply;
+            try {
+                // Default to 'system' if no valid setting is found
+                const storedSettingsString = localStorage.getItem('recon_visualization_settings');
+                let activePreference = 'system';
+
+                if (storedSettingsString) {
+                    const parsedSettings = JSON.parse(storedSettingsString);
+                    if (parsedSettings && ['light', 'dark', 'system'].includes(parsedSettings.theme)) {
+                        activePreference = parsedSettings.theme;
+                    }
+                }
+
+                if (activePreference === 'system') {
+                    themeToApply = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark-theme' : 'light-theme';
+                } else {
+                    themeToApply = activePreference === 'dark' ? 'dark-theme' : 'light-theme';
+                }
+            } catch (e) {
+                console.error('Error applying initial theme:', e);
+                themeToApply = 'light-theme'; // Fallback
+            }
+            document.documentElement.className = themeToApply;
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="../styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RECON-Prep</h1>
+            <p>A companion utility for normalizing whitespace in textual data.</p>
+            
+            <div class="header-controls">
+                <div class="visualization-controls-container" title="Visualization Settings">
+                    <button id="visualizationSettingsButton" class="icon-button" aria-label="Toggle Visualization Settings Menu" aria-haspopup="true" aria-expanded="false">
+                        <span class="label">🔆</span>
+                    </button>
+                    <div id="visualizationMenu" class="visualization-menu hidden" role="menu" aria-labelledby="visualizationSettingsButton">
+                        <button role="menuitem" id="themeLightButton">Light Theme</button>
+                        <button role="menuitem" id="themeDarkButton">Dark Theme</button>
+                        <button role="menuitem" id="themeSystemButton">System Preference</button>
+                        <div role="separator"></div>
+                        <label role="menuitemcheckbox" id="highContrastToggleLabel" class="menu-item-checkbox" aria-checked="false" tabindex="0">
+                            High Contrast
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="file-selection">
+                <h2>1. Select Files</h2>
+                <p>Choose the raw OCR <code>.txt</code> files you want to process.</p>
+                <label for="fileInput">Text files to process:</label>
+                <input type="file" id="fileInput" name="fileInput" multiple accept=".txt" title="Select one or more .txt files">
+            </section>
+
+            <section id="processing">
+                <h2>2. Process Files</h2>
+                <button id="processButton" class="primary-button">Normalize Whitespace</button>
+            </section>
+
+            <section id="results">
+                <h2>3. Download Cleaned Files</h2>
+                <div id="resultsArea" class="results-area">
+                    <p>Your processed files will appear here...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="normalizer.js"></script>
+</body>
+</html>

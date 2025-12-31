@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Textual Comparison Tool</title>
+        <script>
+            (function() {
+                let themeToApply;
+                try {
+                    const storedSettingsString = localStorage.getItem('recon_visualization_settings');
+                    let activePreference = 'system'; // Default to 'system'
+
+                    if (storedSettingsString) {
+                        try {
+                            const parsedSettings = JSON.parse(storedSettingsString);
+                            if (parsedSettings && typeof parsedSettings.theme === 'string' && ['light', 'dark', 'system'].includes(parsedSettings.theme)) {
+                                activePreference = parsedSettings.theme;
+                            }
+                            // If parsedSettings.theme is invalid, missing, or not one of the expected values,
+                            // activePreference remains 'system' (due to its initialization).
+                        } catch (parseError) {
+                            console.error('Error parsing stored theme settings. Defaulting to system preference.', parseError);
+                            // activePreference remains 'system' (due to its initialization).
+                        }
+                    }
+                    // At this point, activePreference is 'light', 'dark', or 'system'.
+
+                    if (activePreference === 'system') {
+                        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                            themeToApply = 'dark-theme';
+                        } else {
+                            themeToApply = 'light-theme';
+                        }
+                    } else if (activePreference === 'dark') {
+                        themeToApply = 'dark-theme';
+                    } else { // activePreference === 'light'
+                        themeToApply = 'light-theme';
+                    }
+                } catch (e) {
+                    // General error catch (e.g., if matchMedia itself errors)
+                    console.error('Error applying initial theme:', e);
+                    // Fallback strategy: attempt system preference first, then light theme as a last resort.
+                    try {
+                        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                            themeToApply = 'dark-theme';
+                        } else {
+                            themeToApply = 'light-theme';
+                        }
+                    } catch (fallbackError) {
+                        console.error('Error applying fallback theme:', fallbackError);
+                        themeToApply = 'light-theme'; // Absolute fallback
+                    }
+                }
+                document.documentElement.className = themeToApply;
+            })();
+        </script>
+        <link rel="stylesheet" href="styles.css">
+    
+        <!-- Required Libraries -->
+        <script src="fastest-levenshtein.js"></script>
+        <script src="stopwords.js" defer></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
+        <script defer src="https://unpkg.com/compromise"></script>
+    
+        <!-- Your Custom Script -->
+        <script src="dist/recon.bundle.js" defer></script>
+    </head>    
+<body>
+    <div class="container">
+        <header>
+            <h1>RECON, <small>for text reading and contrasting</small></h1>
+            <div class="header-controls">
+                <div class="visualization-controls-container" title="Visualization Settings">
+                    <button id="visualizationSettingsButton" class="icon-button" aria-label="Toggle Visualization Settings Menu" aria-haspopup="true" aria-expanded="false">
+                        <span class="label">🔆</span> <!-- Placeholder icon, ideally replace with SVG or font icon -->
+                    </button>
+                    <!-- Visually hidden checkbox, associated by label's 'for' attribute -->
+                    <input type="checkbox" id="highContrastToggleMenu" class="visually-hidden">
+                    <div id="visualizationMenu" class="visualization-menu hidden" role="menu" aria-labelledby="visualizationSettingsButton">
+                        <button role="menuitem" id="themeLightButton">Light Theme</button>
+                        <button role="menuitem" id="themeDarkButton">Dark Theme</button>
+                        <button role="menuitem" id="themeSystemButton">System Preference</button>
+                        <div role="separator"></div>
+                        <label role="menuitemcheckbox" for="highContrastToggleMenu" id="highContrastToggleMenuLabel" class="menu-item-checkbox" aria-checked="false" tabindex="0">
+                            High Contrast
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="inputs">
+                <div class="text-input">
+                    <div class="input-header">
+                        <label for="text1">Text 1 / Reference Text:</label>
+                        <span class="input-hint">Type, paste, or double-click to upload</span>
+                    </div>
+                    <textarea id="text1" rows="10" cols="50" placeholder="Enter or paste text here..." aria-label="Text input for first text">The brouun smart fox jumps
+over the lazy Dog. & ſpills so much aetheꝛ and OEsophagus, Æon and œuf.
+sluth and ſlvth & vvow is fjnished</textarea>
+                </div>
+                <div class="text-input">
+                    <div class="input-header">
+                        <label for="text2">Text 2 / Variant Text:</label>
+                        <span class="input-hint">Type, paste, or double-click to upload</span>
+                    </div>
+                    <textarea id="text2" rows="10" cols="50" placeholder="Enter or paste text here..." aria-label="Text input for second text">A quick, brown Fox
+jumped oveꝛ a lazy dogs and spills ſo much æther & Œsophagus, AEon & oeuf!
+ſlvth & sluth and wovv is ﬁnjshed</textarea>
+                </div>
+            </section>
+            <section id="controls">
+                <div class="controls-grid">
+                    <div class="control-group">
+                        <h3>Comparison</h3>
+                        <label for="granularity" title="Choose the level of comparison: 'Character' compares text char-by-char (precise, good for OCR errors); 'Word' compares token-by-token (good for content changes).">
+                            <select id="granularity" name="granularity" aria-label="Select Comparison Granularity">
+                                <option value="character">Character</option>
+                                <option value="word">Word</option>
+                            </select>
+                         </label>
+                    </div>
+
+                    <div class="control-group">
+                        
+                        <div class="sensitivity-subgroup">
+                            <h3>Include:</h3>
+                            <div class="checkbox-group">
+                                <label title="Check to include spaces, tabs, and line breaks in the comparison. Uncheck to ignore differences solely due to whitespace."><input type="checkbox" id="includeWhitespace" checked> Whitespace</label>
+                                <label title="Check to include punctuation marks (.,?!; etc.) in the comparison. Uncheck to ignore differences solely due to punctuation."><input type="checkbox" id="includePunctuation" checked> Punctuation</label>
+                                <label title="Check to treat uppercase and lowercase letters as different (e.g., 'The' vs 'the'). Uncheck to ignore capitalization differences."><input type="checkbox" id="includeCapitalization" checked> Capitalization</label>
+                            </div>
+                        </div>
+
+                        <div class="sensitivity-subgroup">
+                            <h3>Exclude:</h3>
+                            <div class="checkbox-group">
+                                <label title="Check to treat logograms and their expansions as equivalent (e.g., '&' vs 'and'). Uncheck to count them as differences."><input type="checkbox" id="ignoreLogograms" checked> Logograms</label>
+                                <label title="Check to treat common ligatures and their expanded forms as equivalent (e.g., 'æ' vs 'ae', 'ﬁ' vs 'fi'). Uncheck to count them as differences."><input type="checkbox" id="ignoreLigatures" checked> Ligatures</label>
+                                <label title="Check to treat certain archaic letter forms and their modern equivalents as equivalent (e.g., 'ſ' vs 's', 'ꝛ' vs 'r'). Uncheck to count them as differences."><input type="checkbox" id="ignoreArchaicLetters" checked> Archaic Letters</label>
+                                <label title="Check to treat 'u'/'U' and 'v'/'V' as equivalent by changing *all* 'v' type into 'u' type. Leave unchecked to count them as distinct."><input type="checkbox" id="ignoreUV" name="ignoreUV"> u/v Variations</label>
+                                <label title="Check to treat 'i'/'I' and 'j'/'J' as equivalent by changing *all* 'j' type into 'i' type. Leave unchecked to count them as distinct."><input type="checkbox" id="ignoreIJ" name="ignoreIJ"> i/j Variations</label>
+                                <label title="Check to normalize 'uu/vv' and 'UU/VV' into to 'w/W' by changing all paired instances of 'uu'/'vv' type into 'w' type. Leave unchecked to count them as distinct."><input type="checkbox" id="normalizeUvW" name="normalizeUvW"> uu/vv Normalization</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Export Format</h3>
+                        <div class="radio-group">
+                            <label title="Export results as inline TEI-style XML, suitable for critical apparatus display."><input type="radio" name="exportFormat" value="xml" checked> XML</label>
+                            <label title="Export results as standoff JSON with stable character offsets, suitable for data analysis."><input type="radio" name="exportFormat" value="json"> Standoff JSON</label>
+                            <!-- CSV Option Removed -->
+                        </div>
+                    </div>
+
+                    <div class="control-group button-group">
+                        <button type="button" id="compareButton" class="primary-button">Compare Texts</button>
+                        <button type="button" id="exportButton" class="secondary-button">Export Results</button>
+                    </div>
+                    
+                    <details class="control-group" id="cmToolsContainer">
+                        <summary><h3>Generate OCR Confusion Matrix</h3></summary>
+                        <div>
+                            <label for="confusionMatrixDataText">Confusion Matrix <br><small>(JSON array of arrays)</small>:</label>
+                            <textarea id="confusionMatrixDataText" rows="5" placeholder="e.g., [[90,5,5],[2,88,10],[3,4,83]]"></textarea>
+                        </div>
+                        <div>
+                            <label for="confusionMatrixGlyphsText">Glyphs List<br> <small>(JSON array, order matters)</small>:</label>
+                            <input type="text" id="confusionMatrixGlyphsText" placeholder='e.g., ["a","b","c"," ","\n"]'>
+                        </div>
+                        <button type="button" id="loadConfusionMatrixButton">Load Confusion Matrix</button>
+                        <button type="button" id="generateAndPopulateCmButton" class="secondary-button" title="Assumes Text 1 is Ground Truth and Text 2 is OCR output from that Ground Truth. Also assumes a character-level comparison has just been run.">Generate OCR Confusion Matrix</button>
+                        <button type="button" id="saveConfusionMatrixButton" class="secondary-button">Save Current Matrix Data</button>
+                        <button type="button" id="loadCmFromFileButton" class="secondary-button">Load Matrix from File</button>
+                        <input type="file" id="cmFileInput" class="visually-hidden" accept=".json" aria-label="Confusion Matrix File Input">
+                    </details>
+                </div>
+                <details id="settingsPanel" class="settings-container">
+                    <summary>Diff Settings</summary>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <label for="settingDiffTimeout" title="Max time in milliseconds for diff (0=infinite). Higher values take longer but may find better diffs for complex texts.">Diff Timeout (ms):</label>
+                            <input type="number" id="settingDiffTimeout" name="settingDiffTimeout" min="0" step="100">
+                        </div>
+                        <div class="setting-item">
+                            <label for="settingDiffEditCost" title="Cost of an insertion or deletion vs. equality (default 4). Higher values encourage finding commonalities.">Diff Edit Cost:</label>
+                            <input type="number" id="settingDiffEditCost" name="settingDiffEditCost" min="1" step="1">
+                        </div>
+                        <div class="setting-item">
+                            <label for="settingMatchThreshold" title="Fuzziness for matching (0.0=perfect, 1.0=any; default 0.5). Lower values require closer matches.">Match Threshold (0-1):</label>
+                            <input type="number" id="settingMatchThreshold" name="settingMatchThreshold" min="0" max="1" step="0.1">
+                        </div>
+                        <div class="setting-item">
+                            <label for="settingMatchDistance" title="How far to search for matches from expected location (default 1000). Larger values help find distant matches but increase compute time.">Match Distance:</label>
+                            <input type="number" id="settingMatchDistance" name="settingMatchDistance" min="0" step="100">
+                        </div>
+                        <div class="setting-item">
+                            <label for="settingPatchDeleteThreshold" title="Fuzziness for applying patches (0.0=perfect, 1.0=any; default 0.5). Lower values require closer context matches.">Patch Delete Threshold (0-1):</label>
+                            <input type="number" id="settingPatchDeleteThreshold" name="settingPatchDeleteThreshold" min="0" max="1" step="0.1">
+                        </div>
+                        <div class="setting-item">
+                            <label for="settingPatchMargin" title="Chunk size for context in patches (default 4). Larger values provide more context but create bigger patches.">Patch Margin:</label>
+                            <input type="number" id="settingPatchMargin" name="settingPatchMargin" min="0" step="1">
+                        </div>
+                        <div class="setting-item button-group">
+                             <button type="button" id="saveSettingsButton" class="secondary-button">Save Settings</button>
+                             <button type="button" id="resetSettingsButton" class="secondary-button">Reset to Defaults</button>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            
+
+            <section id="results">
+                <h2>Critical Apparatus Display</h2>
+                <details id="diffLegend" class="legend-container" aria-label="Comparison Legend">
+                    <summary>Show/Hide Legend</summary>
+                    <div class="legend-grid">
+                        <div class="legend-item">
+                            <span class="insertion">a_quick,</span>
+                            <p>Inserted text</p>
+                        </div>
+                        <div class="legend-item">
+                            <span class="deletion">smart</span>
+                            <p>Deleted text</p>
+                        </div>
+                        <div class="legend-item">
+                            <span class="substitution-container">
+                                <span class="substitution-deleted">s</span>
+                                <span class="substitution-inserted">ed</span>
+                            </span>
+                            <p>Substituted text</p>
+                        </div>
+                        <div class="legend-item">
+                            <span class="special-char">␠</span>
+                            <p>Space character</p>
+                        </div>
+                        <div class="legend-item">
+                            <span class="newline-marker">↵</span>
+                            <p>Line break marker</p>
+                        </div>
+                    </div>
+                </details>
+                <div id="visualRepresentation" class="diff-container" aria-live="polite" role="region" aria-label="Visual Representation of Differences">
+                    <!-- Visual representations will appear here -->
+                </div>
+                <button id="toggleApparatusHeight" class="secondary-button toggle-apparatus-button hidden" aria-expanded="false" aria-controls="visualRepresentation">Expand Apparatus</button>
+                <div id="statistics" class="statistics-container" role="region" aria-label="Statistical Metrics">
+                    <h3>Statistical Metrics</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Metric</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="statisticsTable">
+                            <!-- Calculated statistics will be populated here by script.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p id="footerDate">
+                <small>JPinkerton RECON tool, last updated <span id="lastModifiedDate"></span></small>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

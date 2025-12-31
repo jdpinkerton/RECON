@@ -1,0 +1,1368 @@
+{
+  "meta": {
+    "timestamp": "2025-09-10T20:17:53.488Z",
+    "comparisonOptions": {
+      "includeWhitespace": false,
+      "includePunctuation": true,
+      "includeCapitalization": false,
+      "ignoreLogograms": false,
+      "ignoreLigatures": false,
+      "ignoreArchaicLetters": false,
+      "ignoreUV": false,
+      "ignoreIJ": false,
+      "normalizeUvW": false,
+      "_granularity": "character"
+    },
+    "dmpParameters": {
+      "Diff_Timeout": 0,
+      "Diff_EditCost": 4,
+      "Match_Threshold": 0.5,
+      "Match_Distance": 1000,
+      "Patch_DeleteThreshold": 0.5,
+      "Patch_Margin": 4
+    },
+    "statistics": {
+      "sObsRaw": 0.9960766854948663,
+      "glyphErrorRates": {},
+      "sBaseline": 0.993,
+      "sCorr": 0.452,
+      "sAdj": 0.996,
+      "totalText1": 35937,
+      "totalText2": 35939,
+      "distance": 141,
+      "CER": "0.39",
+      "NED": "0.39",
+      "WER": "N/A",
+      "capitalizationsText1": 1325,
+      "capitalizationsText2": 1325,
+      "totalPunctuationText1": 1608,
+      "punctuationBreakdownText1": {
+        ",": 1006,
+        "'": 148,
+        ":": 65,
+        ".": 252,
+        ";": 31,
+        "(": 28,
+        ")": 25,
+        "?": 15,
+        "-": 35,
+        "!": 1,
+        "&": 2
+      },
+      "totalPunctuationText2": 1606,
+      "punctuationBreakdownText2": {
+        ",": 1007,
+        "'": 148,
+        ":": 66,
+        ".": 251,
+        ";": 29,
+        "(": 28,
+        ")": 24,
+        "?": 15,
+        "-": 35,
+        "!": 1,
+        "&": 2
+      },
+      "characterCountsText1": {
+        "N": 36,
+        " ": 6430,
+        "H": 106,
+        "e": 5035,
+        "l": 1402,
+        "ſ": 1290,
+        "p": 512,
+        "o": 2325,
+        "n": 2184,
+        "t": 2583,
+        "g": 673,
+        "u": 1219,
+        "i": 2207,
+        "f": 657,
+        "T": 198,
+        "r": 2144,
+        "s": 1061,
+        "b": 437,
+        "d": 1596,
+        ",": 1006,
+        "\n": 1041,
+        "I": 74,
+        "v": 120,
+        "w": 776,
+        "a": 2261,
+        "c": 647,
+        "S": 98,
+        "'": 148,
+        "y": 399,
+        "m": 712,
+        "h": 2398,
+        ":": 65,
+        "A": 253,
+        ".": 252,
+        ";": 31,
+        "W": 121,
+        "z": 18,
+        "k": 294,
+        "V": 29,
+        "O": 46,
+        "M": 30,
+        "L": 81,
+        "F": 50,
+        "B": 58,
+        "D": 28,
+        "C": 36,
+        "(": 28,
+        "æ": 1,
+        ")": 25,
+        "G": 19,
+        "E": 17,
+        "P": 23,
+        "x": 24,
+        "q": 26,
+        "?": 15,
+        "R": 9,
+        "-": 35,
+        "̄": 2,
+        "Y": 12,
+        "Æ": 1,
+        "!": 1,
+        "Q": 1,
+        "&": 2
+      },
+      "characterCountsText2": {
+        "N": 36,
+        " ": 6432,
+        "H": 105,
+        "e": 5040,
+        "l": 1404,
+        "ſ": 1287,
+        "p": 511,
+        "o": 2325,
+        "n": 2184,
+        "t": 2589,
+        "g": 672,
+        "u": 1217,
+        "i": 2210,
+        "f": 659,
+        "T": 198,
+        "r": 2144,
+        "s": 1056,
+        "b": 436,
+        "d": 1598,
+        ",": 1007,
+        "\n": 1041,
+        "I": 75,
+        "v": 119,
+        "w": 776,
+        "a": 2263,
+        "c": 647,
+        "S": 98,
+        "'": 148,
+        "y": 399,
+        "m": 711,
+        "h": 2398,
+        ":": 66,
+        "A": 253,
+        ".": 251,
+        ";": 29,
+        "W": 121,
+        "z": 18,
+        "k": 294,
+        "V": 29,
+        "O": 46,
+        "M": 30,
+        "L": 81,
+        "F": 50,
+        "B": 58,
+        "D": 28,
+        "C": 36,
+        "(": 28,
+        ")": 24,
+        "G": 19,
+        "E": 17,
+        "P": 23,
+        "x": 24,
+        "q": 26,
+        "?": 15,
+        "R": 9,
+        "-": 35,
+        "Y": 12,
+        "Æ": 1,
+        "!": 1,
+        "Q": 1,
+        "&": 2
+      },
+      "wordLevelCapitalizationChanges": {
+        "removed": 0,
+        "added": 0,
+        "unchanged": 0,
+        "removedCaps": {},
+        "addedCaps": {},
+        "unchangedCaps": {}
+      },
+      "characterCaseChanges": {
+        "toLower": 0,
+        "toUpper": 0,
+        "total": 0,
+        "toLowerDetails": {},
+        "toUpperDetails": {}
+      },
+      "variantAnalysis": {
+        "text1Tallies": {
+          "&": 2,
+          "Æ": 1,
+          "æ": 1,
+          "ſ": 1290
+        },
+        "text2Tallies": {
+          "&": 2,
+          "Æ": 1,
+          "ſ": 1287
+        },
+        "changeTallies": {},
+        "totalChanges": {
+          "ligatures": 0,
+          "logograms": 0,
+          "archaic": 0,
+          "uvSwaps": 0,
+          "ijSwaps": 0,
+          "uvwChanges": 0
+        }
+      }
+    },
+    "variantAnalysis": {
+      "text1Tallies": {
+        "&": 2,
+        "Æ": 1,
+        "æ": 1,
+        "ſ": 1290
+      },
+      "text2Tallies": {
+        "&": 2,
+        "Æ": 1,
+        "ſ": 1287
+      },
+      "changeTallies": {},
+      "totalChanges": {
+        "ligatures": 0,
+        "logograms": 0,
+        "archaic": 0,
+        "uvSwaps": 0,
+        "ijSwaps": 0,
+        "uvwChanges": 0
+      }
+    },
+    "normalizationSummary": {
+      "normalizedChangesCount": 0,
+      "normalizedTypes": []
+    }
+  },
+  "variants": [
+    {
+      "id": "variant-001",
+      "type": "deletion",
+      "start": 119,
+      "end": 119,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-002",
+      "type": "insertion",
+      "start": 119,
+      "end": 119,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-003",
+      "type": "deletion",
+      "start": 445,
+      "end": 446,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-004",
+      "type": "insertion",
+      "start": 446,
+      "end": 446,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-005",
+      "type": "substitution",
+      "start": 778,
+      "end": 779,
+      "text1_subsegment": ".",
+      "text2_subsegment": ",",
+      "note": ""
+    },
+    {
+      "id": "variant-006",
+      "type": "deletion",
+      "start": 1326,
+      "end": 1327,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-007",
+      "type": "insertion",
+      "start": 1327,
+      "end": 1327,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-008",
+      "type": "substitution",
+      "start": 2300,
+      "end": 2301,
+      "text1_subsegment": "æ",
+      "text2_subsegment": "c",
+      "note": ""
+    },
+    {
+      "id": "variant-009",
+      "type": "substitution",
+      "start": 3450,
+      "end": 3451,
+      "text1_subsegment": "H",
+      "text2_subsegment": "I l",
+      "note": ""
+    },
+    {
+      "id": "variant-010",
+      "type": "deletion",
+      "start": 3923,
+      "end": 3923,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-011",
+      "type": "insertion",
+      "start": 3923,
+      "end": 3923,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-012",
+      "type": "deletion",
+      "start": 3976,
+      "end": 3977,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-013",
+      "type": "insertion",
+      "start": 3977,
+      "end": 3977,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-014",
+      "type": "deletion",
+      "start": 4310,
+      "end": 4311,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-015",
+      "type": "insertion",
+      "start": 4311,
+      "end": 4311,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-016",
+      "type": "deletion",
+      "start": 4703,
+      "end": 4703,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-017",
+      "type": "insertion",
+      "start": 4703,
+      "end": 4703,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-018",
+      "type": "deletion",
+      "start": 5173,
+      "end": 5174,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-019",
+      "type": "insertion",
+      "start": 5174,
+      "end": 5174,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-020",
+      "type": "deletion",
+      "start": 5335,
+      "end": 5336,
+      "text1_subsegment": "̄",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-021",
+      "type": "insertion",
+      "start": 5336,
+      "end": 5336,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-022",
+      "type": "deletion",
+      "start": 6056,
+      "end": 6056,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-023",
+      "type": "insertion",
+      "start": 6056,
+      "end": 6056,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-024",
+      "type": "deletion",
+      "start": 6650,
+      "end": 6650,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-025",
+      "type": "insertion",
+      "start": 6650,
+      "end": 6650,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-026",
+      "type": "substitution",
+      "start": 6943,
+      "end": 6944,
+      "text1_subsegment": "s",
+      "text2_subsegment": "ſ",
+      "note": ""
+    },
+    {
+      "id": "variant-027",
+      "type": "deletion",
+      "start": 7248,
+      "end": 7249,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-028",
+      "type": "insertion",
+      "start": 7249,
+      "end": 7249,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-029",
+      "type": "deletion",
+      "start": 7665,
+      "end": 7666,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-030",
+      "type": "substitution",
+      "start": 7735,
+      "end": 7736,
+      "text1_subsegment": "ſ",
+      "text2_subsegment": "f",
+      "note": ""
+    },
+    {
+      "id": "variant-031",
+      "type": "insertion",
+      "start": 7847,
+      "end": 7847,
+      "text1_subsegment": "",
+      "text2_subsegment": "(him. ",
+      "note": ""
+    },
+    {
+      "id": "variant-032",
+      "type": "insertion",
+      "start": 7886,
+      "end": 7886,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-033",
+      "type": "substitution",
+      "start": 7889,
+      "end": 7897,
+      "text1_subsegment": "   (him.",
+      "text2_subsegment": ",",
+      "note": ""
+    },
+    {
+      "id": "variant-034",
+      "type": "substitution",
+      "start": 8445,
+      "end": 8447,
+      "text1_subsegment": "s,",
+      "text2_subsegment": ":",
+      "note": ""
+    },
+    {
+      "id": "variant-035",
+      "type": "deletion",
+      "start": 8659,
+      "end": 8660,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-036",
+      "type": "insertion",
+      "start": 8660,
+      "end": 8660,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-037",
+      "type": "substitution",
+      "start": 9110,
+      "end": 9111,
+      "text1_subsegment": "s",
+      "text2_subsegment": "f",
+      "note": ""
+    },
+    {
+      "id": "variant-038",
+      "type": "deletion",
+      "start": 10188,
+      "end": 10189,
+      "text1_subsegment": ",",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-039",
+      "type": "insertion",
+      "start": 10189,
+      "end": 10189,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-040",
+      "type": "deletion",
+      "start": 12764,
+      "end": 12765,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-041",
+      "type": "insertion",
+      "start": 12765,
+      "end": 12765,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-042",
+      "type": "deletion",
+      "start": 13467,
+      "end": 13468,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-043",
+      "type": "insertion",
+      "start": 13468,
+      "end": 13468,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-044",
+      "type": "deletion",
+      "start": 13636,
+      "end": 13637,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-045",
+      "type": "insertion",
+      "start": 13637,
+      "end": 13637,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-046",
+      "type": "deletion",
+      "start": 14320,
+      "end": 14321,
+      "text1_subsegment": ",",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-047",
+      "type": "insertion",
+      "start": 14321,
+      "end": 14321,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-048",
+      "type": "deletion",
+      "start": 14766,
+      "end": 14767,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-049",
+      "type": "insertion",
+      "start": 14767,
+      "end": 14767,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-050",
+      "type": "deletion",
+      "start": 14950,
+      "end": 14951,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-051",
+      "type": "insertion",
+      "start": 14951,
+      "end": 14951,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-052",
+      "type": "deletion",
+      "start": 16924,
+      "end": 16924,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-053",
+      "type": "insertion",
+      "start": 16924,
+      "end": 16924,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-054",
+      "type": "deletion",
+      "start": 17253,
+      "end": 17253,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-055",
+      "type": "insertion",
+      "start": 17253,
+      "end": 17253,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-056",
+      "type": "deletion",
+      "start": 18057,
+      "end": 18057,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-057",
+      "type": "insertion",
+      "start": 18057,
+      "end": 18057,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-058",
+      "type": "deletion",
+      "start": 19054,
+      "end": 19055,
+      "text1_subsegment": "̄",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-059",
+      "type": "insertion",
+      "start": 19055,
+      "end": 19055,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-060",
+      "type": "substitution",
+      "start": 19784,
+      "end": 19785,
+      "text1_subsegment": "n",
+      "text2_subsegment": "h",
+      "note": ""
+    },
+    {
+      "id": "variant-061",
+      "type": "deletion",
+      "start": 20699,
+      "end": 20699,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-062",
+      "type": "insertion",
+      "start": 20699,
+      "end": 20699,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-063",
+      "type": "substitution",
+      "start": 21924,
+      "end": 21925,
+      "text1_subsegment": ".",
+      "text2_subsegment": ",",
+      "note": ""
+    },
+    {
+      "id": "variant-064",
+      "type": "substitution",
+      "start": 22018,
+      "end": 22019,
+      "text1_subsegment": ".",
+      "text2_subsegment": ",",
+      "note": ""
+    },
+    {
+      "id": "variant-065",
+      "type": "substitution",
+      "start": 22317,
+      "end": 22318,
+      "text1_subsegment": "i",
+      "text2_subsegment": "ſ",
+      "note": ""
+    },
+    {
+      "id": "variant-066",
+      "type": "insertion",
+      "start": 22355,
+      "end": 22355,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-067",
+      "type": "substitution",
+      "start": 22358,
+      "end": 22362,
+      "text1_subsegment": "pais",
+      "text2_subsegment": "ei",
+      "note": ""
+    },
+    {
+      "id": "variant-068",
+      "type": "substitution",
+      "start": 22364,
+      "end": 22365,
+      "text1_subsegment": ")",
+      "text2_subsegment": ",",
+      "note": ""
+    },
+    {
+      "id": "variant-069",
+      "type": "substitution",
+      "start": 23422,
+      "end": 23463,
+      "text1_subsegment": "Mou'd by Loues force,vnto ech other lep ?",
+      "text2_subsegment": "to ech other lep ? Mou'd by Loeo o ent t eo r e e",
+      "note": ""
+    },
+    {
+      "id": "variant-070",
+      "type": "deletion",
+      "start": 24671,
+      "end": 24672,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-071",
+      "type": "insertion",
+      "start": 24672,
+      "end": 24672,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-072",
+      "type": "insertion",
+      "start": 28018,
+      "end": 28018,
+      "text1_subsegment": "",
+      "text2_subsegment": "ke treaſure. ipwi ",
+      "note": ""
+    },
+    {
+      "id": "variant-073",
+      "type": "substitution",
+      "start": 28046,
+      "end": 28067,
+      "text1_subsegment": "the ſhipwracke treaſu",
+      "text2_subsegment": " t he aera",
+      "note": ""
+    },
+    {
+      "id": "variant-074",
+      "type": "substitution",
+      "start": 29777,
+      "end": 29778,
+      "text1_subsegment": "o",
+      "text2_subsegment": "d",
+      "note": ""
+    },
+    {
+      "id": "variant-075",
+      "type": "substitution",
+      "start": 30504,
+      "end": 30505,
+      "text1_subsegment": ";",
+      "text2_subsegment": ",",
+      "note": ""
+    },
+    {
+      "id": "variant-076",
+      "type": "insertion",
+      "start": 30548,
+      "end": 30548,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-077",
+      "type": "deletion",
+      "start": 31299,
+      "end": 31300,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-078",
+      "type": "insertion",
+      "start": 31300,
+      "end": 31300,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-079",
+      "type": "deletion",
+      "start": 32307,
+      "end": 32308,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-080",
+      "type": "insertion",
+      "start": 32308,
+      "end": 32308,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-081",
+      "type": "substitution",
+      "start": 32442,
+      "end": 32483,
+      "text1_subsegment": "That hung on them,as it durſt not affaire",
+      "text2_subsegment": "m as it durſt not afſaile That hu n t a t t t t afie,",
+      "note": ""
+    },
+    {
+      "id": "variant-082",
+      "type": "deletion",
+      "start": 32649,
+      "end": 32649,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-083",
+      "type": "insertion",
+      "start": 32649,
+      "end": 32649,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-084",
+      "type": "deletion",
+      "start": 32991,
+      "end": 32991,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-085",
+      "type": "insertion",
+      "start": 32991,
+      "end": 32991,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-086",
+      "type": "deletion",
+      "start": 33676,
+      "end": 33677,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-087",
+      "type": "deletion",
+      "start": 33724,
+      "end": 33725,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-088",
+      "type": "deletion",
+      "start": 33969,
+      "end": 33970,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-089",
+      "type": "deletion",
+      "start": 34022,
+      "end": 34023,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-090",
+      "type": "deletion",
+      "start": 34032,
+      "end": 34033,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-091",
+      "type": "deletion",
+      "start": 34253,
+      "end": 34254,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-092",
+      "type": "deletion",
+      "start": 34298,
+      "end": 34299,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-093",
+      "type": "insertion",
+      "start": 34616,
+      "end": 34616,
+      "text1_subsegment": "",
+      "text2_subsegment": "ide",
+      "note": ""
+    },
+    {
+      "id": "variant-094",
+      "type": "insertion",
+      "start": 34652,
+      "end": 34652,
+      "text1_subsegment": "",
+      "text2_subsegment": "i",
+      "note": ""
+    },
+    {
+      "id": "variant-095",
+      "type": "deletion",
+      "start": 34653,
+      "end": 34657,
+      "text1_subsegment": " beſ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-096",
+      "type": "substitution",
+      "start": 34659,
+      "end": 34660,
+      "text1_subsegment": "e",
+      "text2_subsegment": ".",
+      "note": ""
+    },
+    {
+      "id": "variant-097",
+      "type": "deletion",
+      "start": 35023,
+      "end": 35024,
+      "text1_subsegment": ",",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-098",
+      "type": "insertion",
+      "start": 35024,
+      "end": 35024,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-099",
+      "type": "substitution",
+      "start": 35334,
+      "end": 35335,
+      "text1_subsegment": ".",
+      "text2_subsegment": ",",
+      "note": ""
+    },
+    {
+      "id": "variant-100",
+      "type": "substitution",
+      "start": 35369,
+      "end": 35373,
+      "text1_subsegment": "as ſ",
+      "text2_subsegment": " aes, ",
+      "note": ""
+    },
+    {
+      "id": "variant-101",
+      "type": "substitution",
+      "start": 35545,
+      "end": 35546,
+      "text1_subsegment": "e",
+      "text2_subsegment": "c",
+      "note": ""
+    },
+    {
+      "id": "variant-102",
+      "type": "deletion",
+      "start": 35624,
+      "end": 35625,
+      "text1_subsegment": ",",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-103",
+      "type": "substitution",
+      "start": 36143,
+      "end": 36144,
+      "text1_subsegment": "ſ",
+      "text2_subsegment": "f",
+      "note": ""
+    },
+    {
+      "id": "variant-104",
+      "type": "deletion",
+      "start": 36685,
+      "end": 36686,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-105",
+      "type": "insertion",
+      "start": 36686,
+      "end": 36686,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-106",
+      "type": "substitution",
+      "start": 37082,
+      "end": 37083,
+      "text1_subsegment": ";",
+      "text2_subsegment": ",",
+      "note": ""
+    },
+    {
+      "id": "variant-107",
+      "type": "substitution",
+      "start": 37204,
+      "end": 37205,
+      "text1_subsegment": "f",
+      "text2_subsegment": "n",
+      "note": ""
+    },
+    {
+      "id": "variant-108",
+      "type": "substitution",
+      "start": 37219,
+      "end": 37220,
+      "text1_subsegment": "m",
+      "text2_subsegment": "n",
+      "note": ""
+    },
+    {
+      "id": "variant-109",
+      "type": "substitution",
+      "start": 37412,
+      "end": 37413,
+      "text1_subsegment": "n",
+      "text2_subsegment": "h",
+      "note": ""
+    },
+    {
+      "id": "variant-110",
+      "type": "substitution",
+      "start": 37670,
+      "end": 37671,
+      "text1_subsegment": "u",
+      "text2_subsegment": "n",
+      "note": ""
+    },
+    {
+      "id": "variant-111",
+      "type": "deletion",
+      "start": 37677,
+      "end": 37678,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-112",
+      "type": "substitution",
+      "start": 37932,
+      "end": 37933,
+      "text1_subsegment": ",",
+      "text2_subsegment": ".",
+      "note": ""
+    },
+    {
+      "id": "variant-113",
+      "type": "deletion",
+      "start": 38354,
+      "end": 38355,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-114",
+      "type": "insertion",
+      "start": 38355,
+      "end": 38355,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-115",
+      "type": "substitution",
+      "start": 38771,
+      "end": 38772,
+      "text1_subsegment": "ſ",
+      "text2_subsegment": "f",
+      "note": ""
+    },
+    {
+      "id": "variant-116",
+      "type": "deletion",
+      "start": 38992,
+      "end": 38993,
+      "text1_subsegment": ",",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-117",
+      "type": "insertion",
+      "start": 38993,
+      "end": 38993,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-118",
+      "type": "deletion",
+      "start": 39353,
+      "end": 39356,
+      "text1_subsegment": "   ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-119",
+      "type": "insertion",
+      "start": 39356,
+      "end": 39356,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-120",
+      "type": "insertion",
+      "start": 39579,
+      "end": 39579,
+      "text1_subsegment": "",
+      "text2_subsegment": " ",
+      "note": ""
+    },
+    {
+      "id": "variant-121",
+      "type": "deletion",
+      "start": 39581,
+      "end": 39582,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-122",
+      "type": "deletion",
+      "start": 40981,
+      "end": 40982,
+      "text1_subsegment": " ",
+      "text2_subsegment": "",
+      "note": ""
+    },
+    {
+      "id": "variant-123",
+      "type": "insertion",
+      "start": 40982,
+      "end": 40982,
+      "text1_subsegment": "",
+      "text2_subsegment": "",
+      "note": ""
+    }
+  ]
+}

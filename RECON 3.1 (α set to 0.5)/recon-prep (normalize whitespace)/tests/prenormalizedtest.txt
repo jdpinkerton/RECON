@@ -1,0 +1,10 @@
+This line uses a standard space.
+This line uses a Non-Breaking Space.
+Here is an Em Space.
+And a Thin Space.
+Ideographic　Space.
+A mix of spaces: standard, Non-Breaking , Em , and Thin .
+This sentence has a line break
+which must be preserved.
+Spaces and breaks
+should coexist.

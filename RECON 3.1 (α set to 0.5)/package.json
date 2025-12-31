@@ -1,0 +1,17 @@
+{
+  "name": "recon-text-comparison",
+  "version": "1.0.0",
+  "main": "constants.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild script.js --bundle --outfile=dist/recon.bundle.js --format=iife",
+    "dev": "esbuild script.js --bundle --outfile=dist/recon.bundle.js --format=iife --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "esbuild": "0.21.5"
+  }
+}

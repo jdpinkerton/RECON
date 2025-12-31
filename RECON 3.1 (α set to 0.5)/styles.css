@@ -1,0 +1,1465 @@
+/* Define CSS Variables for Light, Dark, and High Contrast Themes */
+:root {
+    /* Light Theme Variables (Defaults) */
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --header-footer-bg: #f1f1f1;
+    --header-footer-text: #000000;
+    --insertion-bg: #aaffb0; /* Brighter green */
+    --insertion-text: #247a3b;
+    --deletion-bg: #ffb0b0; /* Brighter red */
+    --deletion-text: #7a2424;
+    --substitution-container-bg: #e6e6ff;
+    --substitution-deleted-bg: #ffe6e6;
+    --substitution-deleted-text: #8b0000;
+    --substitution-inserted-bg: var(--insertion-bg);
+    --substitution-inserted-text: var(--insertion-text);
+    --special-char-color: #666666;
+    --button-bg: #4CAF50;
+    --button-text: #ffffff;
+    --button-hover-bg: #45a049;
+    --border-color: #ccc;
+    --legend-bg: #ffffff;
+    --legend-border: #ddd;
+    --table-header-bg: #f2f2f2;
+    --card-bg: #ffffff;
+    --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    --page-bg: #f5f5f5;
+    --card-border: 1px solid rgba(0, 0, 0, 0.1);
+    --card-radius: 12px;
+    --text-secondary: #666666;
+    --control-bg: rgba(0, 0, 0, 0.03);
+    --button-secondary-bg: #e0e0e0;
+    --button-secondary-text: #333333;
+    /* Menu specific variables */
+    --menu-background: #ffffff;
+    --menu-text-color: #000000;
+    --menu-hover-bg: #f0f0f0;
+    --menu-active-bg: #e0e0e0;
+
+    /* Added/Ensured definitions */
+    --diff-bg-color: var(--background-color);
+    --monospace-font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    --border-radius-small: 3px;
+    --substitution-generic-bg: #ffe6cc;
+    --substitution-generic-text: #bf5700;
+    --substitution-generic-border: #ffb366;
+    --capitalization-change-bg: #fffacd;
+    --capitalization-change-text: #f0ad4e;
+    --capitalization-change-border: #ffd700;
+    --capitalization-change-hover-text: #555;
+    --line-break-symbol-color: #5bc0de;
+    --longest-substring-highlight-bg: yellow;
+    --table-border-color: #ddd;
+}
+
+/* Explicit Light Theme (matches :root by default but allows overrides) */
+
+/* Dark Theme Variables */
+html.dark-theme {
+    /* General UI Colors */
+    --background-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --header-footer-bg: #1f1f1f;
+    --header-footer-text: #e0e0e0;
+    --insertion-bg: #1e442b;
+    --insertion-text: #a6e3a1;
+    --deletion-bg: #5c1313;
+    --deletion-text: #ffb3b3;
+    --substitution-container-bg: #3a3a7a;
+    --substitution-deleted-bg: #7a1e1e;
+    --substitution-deleted-text: #ff9999;
+    --substitution-inserted-bg: var(--insertion-bg);
+    --substitution-inserted-text: var(--insertion-text);
+    --special-char-color: #cccccc;
+    --button-bg: #388e3c;
+    --button-text: #ffffff;
+    --button-hover-bg: #2e7d32;
+    --border-color: #444;
+    --legend-bg: #1f1f1f;
+    --legend-border: #555;
+    --table-header-bg: #333333;
+    --card-bg: #1e1e1e;
+    --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --page-bg: #121212;
+    --card-border: 1px solid rgba(255, 255, 255, 0.1);
+    --text-secondary: #999999;
+    --control-bg: rgba(255, 255, 255, 0.03);
+    --button-secondary-bg: #333333;
+    --button-secondary-text: #e0e0e0;
+    /* Menu specific variables for dark theme */
+    --menu-background: #333333;
+    --menu-text-color: #eeeeee;
+    --menu-hover-bg: #444444;
+    --menu-active-bg: #555555;
+
+    /* Added definitions */
+    --diff-bg-color: var(--background-color);
+    /* --monospace-font is inherited from :root */
+}
+
+html.high-contrast {
+    /* High Contrast Theme Variables */
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --header-footer-bg: #000000; /* Consistent with page background */
+    --header-footer-text: #ffffff;
+    --insertion-bg: #ffff00; /* Yellow */
+    --insertion-text: #000000; /* Black */
+    --deletion-bg: #ff00ff;   /* Magenta */
+    --deletion-text: #ffffff;   /* White */
+    --substitution-container-bg: #00ffff; /* Cyan for outer container */
+    --substitution-deleted-bg: #ff0000; /* Red */
+    --substitution-deleted-text: #ffffff; /* White */
+    --substitution-inserted-bg: var(--insertion-bg);
+    --substitution-inserted-text: var(--insertion-text);
+    --special-char-color: #ffffff;
+    --button-bg: #ffffff;
+    --button-text: #000000;
+    --button-hover-bg: #cccccc;
+    --border-color: #ffffff;
+    --legend-bg: #000000;
+    --legend-border: #ffffff;
+    --table-header-bg: #000000; /* Make table header consistent */
+    --card-bg: #000000;
+    --card-shadow: 0 0 0 2px #ffffff; /* Prominent border instead of shadow */
+    --page-bg: #000000;
+    --card-border: 2px solid #ffffff;
+    --text-secondary: #dddddd; /* Lighter grey for secondary text */
+    --control-bg: #1a1a1a; /* Slightly off-black for control backgrounds */
+    --button-secondary-bg: #333333;
+    --button-secondary-text: #ffffff;
+    /* Menu specific variables for high contrast */
+    --menu-background: #000000;
+    --menu-text-color: #ffffff;
+    --menu-hover-bg: #333333;
+    --menu-active-bg: #555555;
+
+    /* Added definitions */
+    --diff-bg-color: var(--background-color);
+    /* --monospace-font is inherited from :root */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: var(--page-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--header-footer-bg);
+    border-bottom: var(--card-border);
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+}
+
+.text-input {
+    margin-bottom: 20px;
+}
+
+.text-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.text-input textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.text-input textarea.dragover {
+    border-color: var(--button-bg);
+    background-color: rgba(76, 175, 80, 0.05);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.text-input textarea.file-loaded {
+    animation: flash-success 0.5s ease;
+}
+
+@keyframes flash-success {
+    0% { background-color: var(--background-color); }
+    50% { background-color: rgba(76, 175, 80, 0.1); }
+    100% { background-color: var(--background-color); }
+}
+
+.text-input textarea:hover {
+    border-color: var(--button-hover-bg);
+}
+
+.text-input textarea:focus {
+    outline: none;
+    border-color: var(--button-bg);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.file-upload label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.file-upload input[type="file"] {
+    margin-top: 5px;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+#compareButton, #exportButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: var(--button-text);
+    background-color: var(--button-bg);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+#compareButton:hover, #exportButton:hover {
+    background-color: var(--button-hover-bg);
+    outline: 2px solid var(--button-hover-bg); /* For accessibility */
+}
+
+/* Flex Layout for Inputs and Controls */
+#inputs, #controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.text-input, .control-group {
+    flex: 1 1 300px;
+}
+
+/* Style fieldsets for better visual grouping */
+fieldset.control-group {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Legend Styles */
+.legend-container {
+    margin-bottom: 20px;
+    background: var(--legend-bg);
+    border: 1px solid var(--legend-border);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.legend-container summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+    color: var(--text-color);
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend-item span {
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: monospace;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+}
+
+.legend-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+/* Styles for the main diff visualization area */
+/* This was previously #diffOutput and other selectors */
+#visualRepresentation {
+    display: flex;
+    flex-wrap: wrap; /* Ensure default state allows wrapping of lines */
+    align-items: baseline; /* Important for aligning text across wrapped lines */
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    background-color: var(--diff-bg-color);
+    font-family: var(--monospace-font);
+    font-size: 0.9rem; /* Slightly smaller for dense display */
+    line-height: 1.6; /* Improved readability */
+    min-height: 150px; /* Good default height */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    overflow-y: auto; /* If content overflows vertically */
+    max-height: 70vh; /* Limit height and allow scroll */
+    overflow-x: hidden; /* Ensure default horizontal overflow allows scrolling if content is too wide before wrapping */
+}
+
+#visualRepresentation.expanded-apparatus {
+    max-height: none;    /* Expand to full content height */
+    overflow-y: auto;    /* Still allow vertical scroll if content is extremely tall */
+    overflow-x: hidden;  /* Prevent main container from having horizontal scroll */
+}
+
+.logical-line {
+    display: flex;
+    align-items: baseline;
+    min-height: 1.8em;
+    overflow-x: auto;
+    white-space: pre;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logical-line.no-whitespace {
+    display: block;
+    min-height: 1.8em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#visualRepresentation[data-granularity="character"] .logical-line.no-whitespace,
+#visualRepresentation[data-granularity="word"] .logical-line.no-whitespace {
+    display: block;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+#visualRepresentation {
+    overflow-x: hidden;
+}
+
+/* === Start Newline and Diff Line Styling === */
+
+/* Basic styling for all diff segments (lines/words/chars) */
+.diff-line {
+    display: inline-block; 
+    vertical-align: top; 
+    white-space: pre-wrap; /* Allow wrapping but preserve spaces/newlines within */
+}
+
+/* Tighter spacing for word granularity */
+#visualRepresentation[data-granularity="word"] .diff-line {
+    margin: 0 0.05em 0.05em 0;
+}
+
+/* Very tight spacing for character granularity */
+#visualRepresentation[data-granularity="character"] .diff-line {
+    margin: 0 0.002em 0.002em 0;
+    line-height: 1.2;
+    padding: 0;
+    vertical-align: baseline;
+    overflow-wrap: break-word;
+}
+
+/* Ensure substitution containers in character mode (with whitespace) match general style */
+#visualRepresentation[data-granularity="character"] .substitution-container.diff-line {
+    /* Override .diff-line character mode specifics to match general .substitution-container */
+    display: inline-flex;
+    align-items: center;
+    vertical-align: baseline;
+    gap: 0.2em;
+    background-color: var(--substitution-container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1px;
+    margin: 0 1px; /* Override tight character diff-line margin */
+    line-height: inherit; /* Reset from character diff-line's 1.2 if needed */
+}
+
+#visualRepresentation[data-granularity="character"] .substitution-container.diff-line .substitution-deleted,
+#visualRepresentation[data-granularity="character"] .substitution-container.diff-line .substitution-inserted {
+    /* Ensure these inner parts don't have conflicting padding/margin from general .diff-line styles */
+    padding: 2px 4px; /* Standard padding for these elements */
+    margin: 0; /* Reset any margin from .diff-line */
+    border-radius: 3px;
+    line-height: inherit; /* Ensure they inherit from the substitution container if appropriate */
+}
+
+/* Force newline segments to break */
+.diff-line.newline {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+    clear: both !important;
+    float: none !important;
+    position: relative !important;
+}
+
+/* Ensure br inside newline spans doesn't add extra space */
+.diff-line.newline br {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    height: 0;
+    content: "";
+}
+
+/* Styling for the pilcrow (newline marker) */
+.newline-marker {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 0.8em;
+    vertical-align: baseline;
+    padding: 0 0.1em;
+    border-radius: 2px;
+}
+
+.newline-marker.unchanged {
+    color: var(--text-secondary);
+}
+
+.newline-marker.insert {
+    color: var(--insertion-text);
+    background-color: var(--insertion-bg);
+}
+
+.newline-marker.delete {
+    color: var(--deletion-text);
+    background-color: var(--deletion-bg);
+}
+
+/* === End Newline and Diff Line Styling === */
+
+/* Styling for the inner span that holds the actual text/marker of a token */
+.diff-line > span {
+    padding: 0 0.1em;
+    border-radius: var(--border-radius-small);
+    white-space: pre-wrap; 
+    display: inline-block; 
+    vertical-align: baseline;
+}
+
+/* Color for unchanged text */
+.unchanged {
+    color: var(--text-color);
+    /* background-color: transparent; /* or var(--diff-bg-color) */
+}
+
+/* Styles for insertions */
+.insertion {
+    background-color: var(--insertion-bg);
+    color: var(--insertion-text);
+    text-decoration: none;
+    position: relative;
+}
+.insertion::before {
+    content: none !important;
+}
+
+/* Styles for deletions */
+.deletion {
+    background-color: var(--deletion-bg);
+    color: var(--deletion-text);
+    text-decoration: line-through;
+    position: relative;
+}
+.deletion::before {
+    content: none !important;
+}
+
+/* Container for substitution pairs */
+.substitution-container {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.2em;
+    background-color: var(--substitution-container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1px;
+    margin: 0 1px 0 1px;
+    line-height: inherit;
+    vertical-align: baseline;
+}
+
+/* Deleted part of a substitution */
+.substitution-deleted {
+    background-color: var(--substitution-deleted-bg);
+    color: var(--substitution-deleted-text);
+    text-decoration: line-through;
+    padding: 2px 4px; /* Consistent with .insertion/.deletion */
+    border-radius: 3px; /* Consistent with .insertion/.deletion */
+    display: inline-block; /* Ensure proper layout */
+}
+
+/* Inserted part of a substitution */
+.substitution-inserted {
+    background-color: var(--substitution-inserted-bg);
+    color: var(--substitution-inserted-text);
+    padding: 2px 4px; /* Consistent with .insertion/.deletion */
+    border-radius: 3px; /* Consistent with .insertion/.deletion */
+    display: inline-block; /* Ensure proper layout */
+}
+
+/* Newline markers styling */
+.newline-marker {
+    font-weight: bold;
+    padding: 0 0.2em; 
+    border-radius: 2px;
+    display: inline-block; 
+}
+
+/* Style for unchanged newline markers (default text color) */
+.newline-marker.unchanged {
+    color: var(--text-secondary); /* Or var(--text-color) if you prefer primary text color */
+    /* No background change, or a very subtle one if desired */
+}
+
+.newline-marker.insert {
+    background-color: var(--insertion-bg);
+    color: var(--insertion-text);
+}
+
+.newline-marker.delete {
+    background-color: var(--deletion-bg);
+    color: var(--deletion-text);
+}
+
+.statistics-container {
+    margin-top: 20px;
+}
+
+.statistics-container table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.statistics-container th, .statistics-container td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid var(--table-border-color);
+}
+
+.statistics-container th {
+    background-color: var(--table-header-bg);
+    color: var(--text-color);
+}
+
+/* Enhanced Diff Highlights Using Variables */
+.insertion {
+    background-color: var(--insertion-bg);
+    color: var(--insertion-text);
+    padding: 2px 4px;
+    border-radius: var(--border-radius-small);
+    margin: 0 1px;
+    border: 1px solid var(--insertion-bg);
+}
+
+.deletion {
+    background-color: var(--deletion-bg);
+    color: var(--deletion-text);
+    padding: 2px 4px;
+    border-radius: var(--border-radius-small);
+    margin: 0 1px;
+    opacity: 0.9;
+    border: 1px solid var(--deletion-bg);
+}
+
+.unchanged {
+    color: var(--text-color);
+    padding: 2px 4px;
+}
+
+.substitution {
+    background-color: var(--substitution-generic-bg);
+    color: var(--substitution-generic-text);
+    padding: 2px 4px;
+    border-radius: var(--border-radius-small);
+    margin: 0 1px;
+    border: 1px solid var(--substitution-generic-border);
+    position: relative;
+}
+
+.substitution::after {
+    content: '↔';
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+    font-size: 0.8em;
+    color: var(--substitution-generic-text);
+}
+
+.substitution-container .diff-line {
+    margin: 0;
+    padding: 0 1px;
+}
+
+/* Line-Level Comparison Styles */
+.line-container {
+    display: block;
+    margin: 5px 0;
+    padding: 2px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.line-container.insertion {
+    background-color: var(--insertion-bg);
+    border-left: 4px solid var(--insertion-text);
+    padding-left: 8px;
+}
+
+.line-container.deletion {
+    background-color: var(--deletion-bg);
+    border-left: 4px solid var(--deletion-text);
+    padding-left: 8px;
+}
+
+.line-container.unchanged {
+    background-color: var(--background-color);
+}
+
+/* Capitalization Change Styling */
+.capitalization-change {
+    background-color: var(--capitalization-change-bg);
+    font-weight: bold;
+    color: var(--capitalization-change-text);
+    position: relative;
+    padding: 2px 4px;
+    border-radius: var(--border-radius-small);
+    border: 1px dashed var(--capitalization-change-border);
+}
+
+.capitalization-change::after {
+    content: '(Cap)';
+    position: absolute;
+    top: -1.2em;
+    right: 0;
+    font-size: 0.75em;
+    color: var(--capitalization-change-hover-text);
+    background-color: var(--capitalization-change-bg);
+    padding: 0 2px;
+    border-radius: 2px;
+    display: none;
+}
+
+.capitalization-change:hover::after {
+    display: block;
+}
+
+/* Special Character Styling */
+.special-char {
+    display: inline-block;
+    color: var(--special-char-color);
+    font-weight: bold;
+    padding: 0 2px;
+    font-size: 0.9em;
+    font-family: monospace;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+.special-char.insertion {
+    color: var(--insertion-text);
+    background-color: var(--insertion-bg);
+}
+
+.special-char.deletion {
+    color: var(--deletion-text);
+    background-color: var(--deletion-bg);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .legend-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    #inputs, #controls {
+        flex-direction: column;
+    }
+    .text-input, .control-group {
+        width: 100%;
+        margin-right: 0; /* Remove right margin when stacked */
+    }
+    #inputs {
+        gap: 1rem; /* Adjust gap for stacked inputs */
+    }
+    .text-input {
+        margin-bottom: 1rem; /* Consistent bottom margin for stacked inputs */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 10px;
+    }
+    header, footer {
+        padding: 15px;
+    }
+    footer {
+        font-size: 0.9em;
+    }
+    #compareButton, #exportButton {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+    .diff-container {
+        font-size: 0.9em;
+    }
+    .statistics-container table, .statistics-container th, .statistics-container td {
+        font-size: 0.9em;
+    }
+    .header-controls {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+    }
+    #inputs {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+    .button-group {
+        flex-direction: row;
+    }
+    .metric-explanation {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .legend-grid {
+        grid-template-columns: 1fr;
+    }
+    .diff-container {
+        word-break: break-all;
+        font-size: 0.9em;
+    }
+    .statistics-container th, .statistics-container td {
+        padding: 4px;
+    }
+    #inputs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+    .button-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .button-group button {
+        width: 100%;
+    }
+}
+
+/* Styles for Information Buttons */
+.info-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 5px;
+    padding: 0;
+    color: var(--text-color);
+}
+
+.info-button:focus {
+    outline: 2px dashed var(--button-hover-bg);
+    outline-offset: 2px;
+}
+
+/* Styles for Explanation Sections */
+.metric-explanation {
+    margin-top: 5px;
+    padding: 10px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--text-color);
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.metric-explanation.hidden {
+    display: none;
+}
+
+/* Add main container styles */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    border-radius: var(--card-radius);
+    border: var(--card-border);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1), 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Styles */
+header {
+    position: relative;
+}
+
+.header-controls {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.icon-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-1px);
+}
+
+.icon-button .icon {
+    font-size: 16px;
+}
+
+.icon-button .label {
+    font-weight: 500;
+}
+
+/* Input section styling */
+.input-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.input-hint {
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Controls section styling */
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--control-bg);
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.control-group h3 {
+    font-size: 1em;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.checkbox-group, .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkbox-group label, .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.primary-button, .secondary-button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.primary-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+.secondary-button {
+    background-color: var(--button-secondary-bg);
+    color: var(--button-secondary-text);
+}
+
+/* Line Break Symbol Styling */
+.line-break {
+    color: var(--line-break-symbol-color);
+    font-weight: bold;
+    padding: 0 2px;
+    font-size: 1.2em;
+}
+
+.line-break.insertion {
+    color: var(--insertion-text);
+    background-color: var(--insertion-bg);
+}
+
+.line-break.deletion {
+    color: var(--deletion-text);
+    background-color: var(--deletion-bg);
+}
+
+/* Longest Common Substring Highlight */
+.longest-substring-highlight {
+    background-color: var(--longest-substring-highlight-bg);
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .metric-explanation {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    #inputs {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 480px) {
+    .diff-container {
+        font-size: 0.9em;
+    }
+}
+
+/* Add these styles to your existing CSS */
+.diff-container[data-granularity="word"] .content-container,
+.diff-container[data-granularity="line"] .content-container {
+    word-spacing: 0.3em;
+    line-height: 1.5;
+}
+
+.diff-container[data-granularity="word"] .substitution-container,
+.diff-container[data-granularity="line"] .substitution-container {
+    margin: 0 0.3em;
+}
+
+/* Update the inputs section styling */
+#inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.text-input {
+    flex: 1;
+    max-width: 45%; /* Prevent textareas from getting too wide */
+}
+
+.text-input textarea {
+    width: 100%;
+    min-height: 300px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Update responsive layout */
+@media (max-width: 992px) {
+    #inputs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-input {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.disclaimer-container {
+    margin: 20px 0;
+    background-color: var(--card-bg);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    padding: 15px;
+    font-size: 0.9em;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.disclaimer-container summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 5px 0;
+    outline: none;
+    position: relative;
+    list-style: none;
+}
+
+.disclaimer-container summary::-webkit-details-marker {
+    display: none;
+}
+
+.disclaimer-container summary::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%) rotate(0deg);
+    top: 50%;
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+    color: var(--text-secondary);
+}
+
+.disclaimer-container[open] summary::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.disclaimer-content {
+    margin-top: 15px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding: 10px;
+    background-color: var(--control-bg);
+    border-radius: 6px;
+}
+
+/* Update the controls section to better handle the disclaimer */
+.controls-grid {
+    margin-bottom: 0; /* Remove bottom margin since disclaimer will follow */
+}
+
+/* Make sure the disclaimer sits properly in the controls section */
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Remove gap since we're handling spacing in child elements */
+}
+
+.metric-details.hidden {
+    display: none;
+}
+
+/* Basic styling for the visualization controls container */
+.visualization-controls-container {
+    position: relative; /* For positioning the dropdown */
+    display: inline-block;
+}
+
+/* Style for the main icon button */
+#visualizationSettingsButton {
+    /* Add your icon button styles - e.g., padding, border, background */
+    /* Ensure it has a clear visual indication of being interactive */
+    cursor: pointer;
+}
+
+/* Styling for the dropdown menu */
+.visualization-menu {
+    position: absolute;
+    top: 100%; /* Position below the button */
+    right: 0; /* Align to the right of the button */
+    background-color: var(--menu-background); /* Use theme variable */
+    border: 1px solid var(--border-color);    /* Use theme variable */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 1000; /* Ensure it's above other content */
+    min-width: 180px; /* Adjust as needed */
+    padding: 5px 0;
+}
+
+.visualization-menu.hidden {
+    display: none;
+}
+
+/* Styling for menu items (buttons and labels) */
+.visualization-menu button,
+.visualization-menu .menu-item-checkbox {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: inherit;
+    color: var(--menu-text-color); /* Use theme variable */
+}
+
+.visualization-menu button:hover,
+.visualization-menu .menu-item-checkbox:hover {
+    background-color: var(--menu-hover-bg); /* Use theme variable */
+}
+.visualization-menu button[aria-pressed="true"] {
+    font-weight: bold; /* Indicate active theme choice */
+    background-color: var(--menu-active-bg); /* Use theme variable */
+}
+
+
+/* Styling for the separator */
+.visualization-menu [role="separator"] {
+    height: 1px;
+    background-color: var(--border-color); /* Use theme variable */
+    margin: 5px 0;
+}
+
+/* Styling for the checkbox within the label */
+.visualization-menu .menu-item-checkbox input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Utility class to visually hide elements while keeping them accessible */
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/* High contrast adjustments for the menu (optional, depends on your base styles) */
+/* This can also be converted to use variables if high-contrast mode redefines them.
+   For now, assuming it overrides specific properties as it does. */
+.high-contrast .visualization-menu {
+    /* Adjust as needed for high contrast */
+    border: 2px solid; /* Example: more prominent border */
+    /* Potentially use specific high-contrast variables if defined */
+    /* background-color: var(--hc-menu-background, black); */
+    /* color: var(--hc-menu-text-color, white); */
+}
+
+/* .high-contrast .visualization-menu .menu-item-checkbox label:hover {} */ /* Remove this empty ruleset */
+
+.comparison-settings-display {
+    padding: 10px;
+    border: 1px solid var(--border-color); /* Use CSS variable */
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none !important; /* Important to override other display properties if needed */
+}
+
+.toggle-apparatus-button {
+    margin-top: 10px;
+}
+
+.line-number {
+    color: #aaa;
+    font-size: 0.8em;
+    margin-right: 0.5em;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    font-family: var(--monospace-font);
+    vertical-align: middle;
+}
+
+.line-break-marker {
+    color: #ccc;
+    font-size: 0.8em;
+    margin-left: 0.5em;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    font-family: var(--monospace-font);
+    vertical-align: middle;
+}
+
+.logical-line.no-whitespace {
+    display: block;
+}
+
+#visualRepresentation.expanded-apparatus .logical-line,
+#visualRepresentation.expanded-apparatus .logical-line.no-whitespace {
+    display: block;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+.logical-line,
+.logical-line.no-whitespace {
+    display: flex;
+    align-items: baseline;
+    min-height: 1.8em;
+}
+
+#visualRepresentation.expanded-apparatus .logical-line,
+#visualRepresentation.expanded-apparatus .logical-line.no-whitespace {
+    display: block;
+    white-space: pre;
+    overflow-x: auto;
+    min-height: 1.8em;
+}
+
+.logical-line.no-whitespace[data-granularity="character"],
+#visualRepresentation[data-granularity="character"] .logical-line.no-whitespace {
+    display: block;
+    white-space: normal;
+    align-items: baseline;
+    min-height: 1.8em;
+}
+
+.logical-line.no-whitespace .diff-line,
+#visualRepresentation[data-granularity="character"] .logical-line.no-whitespace .diff-line {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.substitution-container {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.2em;
+    background-color: var(--substitution-container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1px;
+    margin: 0 1px 0 1px;
+    line-height: inherit;
+    vertical-align: baseline;
+}
+
+#visualRepresentation.expanded-apparatus .logical-line.no-whitespace {
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+#visualRepresentation .logical-line.no-whitespace {
+    display: block;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+#visualRepresentation[data-granularity="character"] .logical-line.no-whitespace .diff-line,
+#visualRepresentation[data-granularity="character"] .logical-line.no-whitespace .substitution-container,
+#visualRepresentation[data-granularity="character"] .logical-line.no-whitespace .substitution-deleted,
+#visualRepresentation[data-granularity="character"] .logical-line.no-whitespace .substitution-inserted {
+    display: inline !important;
+    vertical-align: baseline !important;
+    padding: 0 1px !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+}
+
+#visualRepresentation[data-granularity="character"] .logical-line.no-whitespace .substitution-container {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    vertical-align: baseline !important;
+    gap: 0.1em !important;
+    padding: 0 1px !important;
+    margin: 0 1px 0 1px !important;
+    border-radius: 3px !important;
+    line-height: 1.2 !important;
+}
+
+/* Add padding to word-mode no-whitespace substitution containers */
+#visualRepresentation[data-granularity="word"] .logical-line.no-whitespace .substitution-container.diff-line {
+    /* Match general .substitution-container styles */
+    display: inline-flex;
+    align-items: center;
+    vertical-align: baseline;
+    gap: 0.2em;
+    background-color: var(--substitution-container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1px;
+    margin: 0 1px;
+    line-height: inherit; /* Ensure consistency */
+}
+
+/* Wall of text display for character comparison without whitespace */
+.logical-line.wall-of-text {
+    display: inline;
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow-x: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.logical-line.wall-of-text .diff-line {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.logical-line.wall-of-text .substitution-container {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.logical-line.wall-of-text .substitution-container .diff-line {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.logical-line.wall-of-text .substitution-deleted,
+.logical-line.wall-of-text .substitution-inserted {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the visual representation container can handle the wall of text */
+#visualRepresentation[data-granularity="character"] .logical-line.wall-of-text {
+    display: block; /* Behaves like a paragraph, allows content to wrap */
+    white-space: normal; /* Allow normal flow and wrapping, relying on word-break */
+    overflow-wrap: break-word; /* More robust word breaking */
+    word-break: break-all; /* For character mode, allow breaks anywhere */
+    overflow-x: auto;
+    padding: 10px; 
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    line-height: 1.2; 
+}
+
+/* Ensure all direct children spans within wall-of-text also don't wrap internally */
+.logical-line.wall-of-text > span { /* This targets .diff-line and .wall-of-text-substitution-group */
+    white-space: normal !important; /* Allow wrapping around these inline elements */
+    display: inline; /* Should behave as inline elements */
+    /* Ensure these spans themselves don't prevent breaking if they contain long unbroken strings */
+    word-break: break-all; /* Apply to children as well */
+    overflow-wrap: break-word; /* Apply to children as well */
+}
+
+/* Style for the new substitution group in wall-of-text */
+.logical-line.wall-of-text .wall-of-text-substitution-group {
+    /* Match general .substitution-container styles */
+    display: inline-flex;
+    align-items: center;
+    vertical-align: baseline;
+    gap: 0.2em;
+    background-color: var(--substitution-container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1px;
+    margin: 0 1px;
+    line-height: inherit;
+    /* white-space: nowrap; /* Retained from previous, group itself won't wrap internal char content */
+}
+
+/* Override padding and margin for specific change types in wall-of-text mode */
+.logical-line.wall-of-text .insertion,
+.logical-line.wall-of-text .deletion,
+.logical-line.wall-of-text .substitution-deleted,
+.logical-line.wall-of-text .substitution-inserted,
+.logical-line.wall-of-text .unchanged {
+    padding: 0 0 !important; /* Remove horizontal padding, adjust if too tight, e.g., 0 1px */
+    margin: 0 !important;
+    border-radius: 0 !important; /* Optional: remove border-radius for max tightness */
+    /* Add display: inline-block and breaking properties here if the above isn't enough */
+    display: inline; /* Ensure they are inline to flow with text */
+    word-break: break-all; /* Allow these specific parts to break */
+    overflow-wrap: break-word; /* Allow these specific parts to break */
+    /* vertical-align: baseline; already on diff-line's inner span, but can be reinforced */
+}
+.scrollable-metric-details {
+    max-height: 150px; /* Or your preferred height */
+    overflow-y: auto;
+    border: 1px solid #ccc; /* Optional: for visual separation */
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 0.9em; /* Optional: smaller font for details */
+}
